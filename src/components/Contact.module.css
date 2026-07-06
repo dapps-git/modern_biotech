@@ -1,0 +1,176 @@
+/* ── Unified contact box ── */
+.unifiedBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-white);
+}
+
+@media (min-width: 900px) {
+  .unifiedBox {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Map side ── */
+.mapSide {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--card-border);
+}
+
+.mapIframe {
+  width: 100%;
+  flex: 1;
+  min-height: 280px;
+  display: block;
+}
+
+/* inline contact meta row */
+.contactMeta {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: var(--card-bg);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  color: var(--neutral-gray);
+  line-height: 1.4;
+}
+
+.metaItem svg {
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.metaItem a {
+  color: var(--primary-blue);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.metaItem a:hover {
+  color: var(--primary-green);
+}
+
+/* ── Form side ── */
+.formSide {
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.formTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+/* form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--neutral-dark);
+  letter-spacing: 0.01em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--neutral-dark);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--primary-green);
+  background: var(--bg-white);
+  box-shadow: 0 0 0 3px rgba(15, 107, 59, 0.09);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+
+/* Success state */
+.successBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 2rem 0;
+}
+
+.successIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(30, 138, 82, 0.12);
+  color: var(--accent-green-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.successText {
+  font-size: 0.82rem;
+  color: var(--neutral-gray);
+  max-width: 240px;
+}
+
+.smallBtn {
+  font-size: 0.78rem;
+  padding: 0.55rem 1rem;
+  margin-top: 0.25rem;
+}

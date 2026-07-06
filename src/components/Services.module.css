@@ -1,0 +1,122 @@
+.waterTopEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: linear-gradient(to bottom, var(--bg-white) 0%, rgba(220, 238, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.serviceCard {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+}
+
+.serviceIconBox {
+  margin-top: -1rem;
+}
+
+.highlightsList {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checkGreen {
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+.checkBlue {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Modals Parameter styling */
+.paramContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.paramCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.categoryTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  letter-spacing: 0.05em;
+  border-left: 3px solid var(--primary-green);
+  padding-left: 0.5rem;
+}
+
+.paramGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.paramCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.paramDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.paramName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--neutral-dark);
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .paramGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

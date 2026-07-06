@@ -1,0 +1,150 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.detailsColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.capsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.capItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.checkMark {
+  color: var(--primary-green);
+  background-color: rgba(15, 107, 59, 0.1);
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.capTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+}
+
+.equipmentCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.eqHeading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.eqGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.eqItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neutral-gray);
+}
+
+.eqDot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+}
+
+/* Visual Column */
+.visualColumn {
+  display: flex;
+  justify-content: center;
+}
+
+.imageCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--card-border);
+  width: 100%;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(16, 60, 138, 0.4) 0%, rgba(16, 60, 138, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.imageCard:hover .image {
+  transform: scale(1.03);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: var(--bg-white);
+  color: var(--primary-blue);
+  border-radius: 50px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .eqGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}

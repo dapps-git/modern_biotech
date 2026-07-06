@@ -1,0 +1,146 @@
+.licenseSection {
+  background: var(--gradient-light-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.waterWaveBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 100% 100%, rgba(15, 107, 59, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 0% 0%, rgba(16, 60, 138, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.certificateGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Seal Illustration */
+.stampColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seal {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 4px double var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 107, 59, 0.05);
+  position: relative;
+  animation: pulse 2.5s infinite;
+}
+
+.sealInner {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px dashed var(--primary-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.sealIcon {
+  color: var(--primary-green);
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.sealText {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+/* Info Column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.detailItem {
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.75rem;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--neutral-light-gray);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+@media (min-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .detailItem {
+    border-bottom: none;
+    border-right: 1px solid var(--card-border);
+    padding-bottom: 0;
+    padding-right: 1.5rem;
+  }
+  .detailItem:last-child {
+    border-right: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .certificateGrid {
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 4rem;
+  }
+}

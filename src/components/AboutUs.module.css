@@ -1,0 +1,117 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.quickFeatures {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+}
+
+.featureIcon {
+  background: var(--primary-green);
+  color: var(--bg-white);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.visualColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stampCard {
+  background: var(--bg-white);
+  border: 2px solid var(--primary-green);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stampCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: var(--gradient-green);
+}
+
+.stampIcon {
+  color: var(--primary-green);
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--card-border);
+  margin: 1.5rem 0;
+}
+
+.licenseDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  font-size: 0.8rem;
+  gap: 1rem;
+}
+
+.licenseDetail:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: var(--neutral-light-gray);
+  font-weight: 500;
+}
+
+.value {
+  color: var(--neutral-dark);
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .quickFeatures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+  }
+}

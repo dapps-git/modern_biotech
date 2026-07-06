@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  min-height: 85vh;
+  padding: calc(var(--header-height) + 4rem) 0 8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/water.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-align: center;
+}
+
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(13, 43, 79, 0.85) 0%, rgba(15, 107, 59, 0.7) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overline {
+  color: var(--water-blue-bg);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  color: var(--bg-white);
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 650px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.btnHeroOutline {
+  background: transparent;
+  color: var(--bg-white);
+  border: 2px solid var(--bg-white);
+  box-shadow: none;
+}
+
+.btnHeroOutline:hover {
+  background: var(--bg-white);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Wave Animation inside Hero */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Responsive Queries */
+@media (min-width: 768px) {
+  .hero {
+    min-height: 90vh;
+  }
+  .overline {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2.8rem;
+  }
+  .tagline {
+    font-size: 1.45rem;
+  }
+}
