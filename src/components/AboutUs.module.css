@@ -1,43 +1,76 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
+/* ─── Content Column ──────────────────────────── */
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.headingArea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.headingArea .subtitle,
+.headingArea .h2-heading,
+.headingArea h2 {
+  text-align: center;
+  width: 100%;
+}
+
+/* All paragraphs inside content are centered */
+.content p {
+  text-align: left;
 }
 
 .quickFeatures {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 .featureItem {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: left;
+  gap: 0.65rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--primary-blue);
+  background: rgba(21, 101, 192, 0.05);
+  border: 1px solid rgba(21, 101, 192, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
 }
 
 .featureIcon {
   background: var(--primary-green);
   color: var(--bg-white);
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
+/* ─── Visual (Stamp Card) Column ──────────────── */
 .visualColumn {
   display: flex;
   justify-content: center;
@@ -45,46 +78,66 @@
 }
 
 .stampCard {
-  background: var(--bg-white);
-  border: 2px solid var(--primary-green);
+  background: linear-gradient(145deg, #ffffff 0%, #f0f6ff 100%);
+  border: 2px solid rgba(21, 101, 192, 0.25);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2.5rem 2rem;
   width: 100%;
   max-width: 400px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 40px -8px rgba(13, 59, 134, 0.18), 0 4px 8px -2px rgba(13, 59, 134, 0.1);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+/* Blue gradient top bar */
 .stampCard::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 8px;
-  background: var(--gradient-green);
+  height: 5px;
+  background: var(--gradient-blue);
+}
+
+/* Subtle decorative background circle */
+.stampCard::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(21, 101, 192, 0.07) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .stampIcon {
   color: var(--primary-green);
-  margin-bottom: 1.25rem;
-  display: inline-block;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(21, 101, 192, 0.08);
+  border-radius: 50%;
 }
 
 .divider {
   height: 1px;
-  background-color: var(--card-border);
-  margin: 1.5rem 0;
+  background: linear-gradient(to right, transparent, rgba(21, 101, 192, 0.3), transparent);
+  margin: 1.25rem 0;
 }
 
 .licenseDetail {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.85rem;
-  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.88rem;
   gap: 1rem;
 }
 
@@ -95,14 +148,17 @@
 .label {
   color: var(--neutral-light-gray);
   font-weight: 500;
+  font-size: 0.82rem;
 }
 
 .value {
-  color: var(--neutral-dark);
+  color: var(--primary-blue);
   font-weight: 700;
   text-align: right;
+  font-size: 0.88rem;
 }
 
+/* ─── Desktop ─────────────────────────────────── */
 @media (min-width: 768px) {
   .quickFeatures {
     grid-template-columns: repeat(2, 1fr);

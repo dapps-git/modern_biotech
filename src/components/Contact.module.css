@@ -1,122 +1,165 @@
-/* ── Unified contact box ── */
-.unifiedBox {
+.contactSection {
+  background-color: var(--bg-white);
+  padding: 4rem 0;
+  border-top: 1px solid var(--card-border);
+}
+
+.layoutGrid {
   display: grid;
   grid-template-columns: 1fr;
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: var(--bg-white);
+  gap: 3rem;
+  align-items: center;
 }
 
-@media (min-width: 900px) {
-  .unifiedBox {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ── Map side ── */
-.mapSide {
+/* Left side info column */
+.infoCol {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--card-border);
+  align-items: flex-start;
+}
+
+.sectionHeading {
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--neutral-dark);
+  margin-bottom: 2rem;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.iconWrapper {
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itemTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  letter-spacing: 0.02em;
+}
+
+.itemDetail {
+  font-size: 0.88rem;
+  color: var(--neutral-gray);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.itemDetail a {
+  color: var(--neutral-gray);
+  transition: color var(--transition-fast);
+}
+
+.itemDetail a:hover {
+  color: var(--primary-green);
+}
+
+/* Highlighted numbers matching mockup */
+.highlightText a {
+  color: var(--primary-green);
+  font-weight: 500;
+}
+
+.highlightText a:hover {
+  color: var(--primary-green-hover);
+}
+
+/* Flat square button matching mockup screenshot */
+.sendInquiryBtn {
+  background-color: var(--primary-green);
+  color: var(--bg-white);
+  border: none;
+  border-radius: 0 !important; /* Square corners */
+  padding: 0.8rem 2.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.sendInquiryBtn:hover {
+  background-color: var(--primary-green-hover);
+  transform: translateY(-1px);
+}
+
+/* Right side Map column */
+.mapCol {
+  width: 100%;
+}
+
+.mapWrapper {
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  line-height: 0;
+  display: block;
 }
 
 .mapIframe {
   width: 100%;
-  flex: 1;
-  min-height: 280px;
+  height: 320px;
   display: block;
 }
 
-/* inline contact meta row */
-.contactMeta {
-  padding: 1rem 1.25rem;
-  border-top: 1px solid var(--card-border);
+/* Modal Form Styles */
+.modalForm {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  background: var(--card-bg);
-}
-
-.metaItem {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.78rem;
-  color: var(--neutral-gray);
-  line-height: 1.4;
-}
-
-.metaItem svg {
-  color: var(--primary-green);
-  flex-shrink: 0;
-}
-
-.metaItem a {
-  color: var(--primary-blue);
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-.metaItem a:hover {
-  color: var(--primary-green);
-}
-
-/* ── Form side ── */
-.formSide {
-  padding: 1.5rem 1.5rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.formTitle {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
-}
-
-/* form layout */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .field label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--neutral-dark);
-  letter-spacing: 0.01em;
 }
 
 .field input,
 .field select,
 .field textarea {
-  font-family: var(--font-family);
-  font-size: 0.8rem;
-  padding: 0.6rem 0.85rem;
+  font-size: 0.88rem;
+  padding: 0.6rem 0.8rem;
   border: 1px solid var(--card-border);
-  border-radius: 8px;
   background: var(--card-bg);
-  color: var(--neutral-dark);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  width: 100%;
   outline: none;
+  transition: border-color var(--transition-fast);
 }
 
 .field input:focus,
@@ -124,53 +167,61 @@
 .field textarea:focus {
   border-color: var(--primary-green);
   background: var(--bg-white);
-  box-shadow: 0 0 0 3px rgba(15, 107, 59, 0.09);
 }
 
-.field textarea {
-  resize: vertical;
-  min-height: 80px;
+.submitInquiryBtn {
+  background-color: var(--primary-green);
+  color: var(--bg-white);
+  border: none;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  margin-top: 0.5rem;
 }
 
-.submitBtn {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  font-size: 0.82rem;
-  margin-top: 0.25rem;
+.submitInquiryBtn:hover {
+  background-color: var(--primary-green-hover);
 }
 
-/* Success state */
 .successBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .successIcon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
-  background: rgba(30, 138, 82, 0.12);
-  color: var(--accent-green-success);
+  background: rgba(21, 101, 192, 0.1);
+  color: var(--primary-green);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .successText {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--neutral-gray);
-  max-width: 240px;
+  max-width: 280px;
 }
 
-.smallBtn {
-  font-size: 0.78rem;
-  padding: 0.55rem 1rem;
-  margin-top: 0.25rem;
+/* Responsive breakpoint */
+@media (min-width: 768px) {
+  .layoutGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .mapIframe {
+    height: 380px;
+  }
 }

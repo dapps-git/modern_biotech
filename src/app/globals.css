@@ -1,14 +1,10 @@
-/* Design System for MODERN BIOTECH LAB */
-/* Based on image.png styles and about.tmd content */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   /* Fonts */
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Cormorant Garamond', serif;
 
   /* Primary Palette — Full Blue Theme */
-  /* "primary-green" variable name kept for compatibility, now mapped to blue */
   --primary-green: #1565C0;
   --primary-green-hover: #0D47A1;
   --accent-green-success: #2196F3;
@@ -63,6 +59,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-family);
 }
 
 html {
@@ -85,7 +82,7 @@ body {
 /* Typography matching image.png scale */
 h1, .h1-heading {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.75rem; /* 28px */
   line-height: 1.25;
   color: var(--h1-color);
@@ -94,7 +91,7 @@ h1, .h1-heading {
 
 h2, .h2-heading {
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.25rem; /* 20px */
   line-height: 1.3;
   color: var(--h2-color);
@@ -102,7 +99,7 @@ h2, .h2-heading {
 
 h3, .h3-heading {
   font-family: var(--font-family);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem; /* 16px */
   line-height: 1.4;
   color: var(--h3-color);
@@ -110,8 +107,8 @@ h3, .h3-heading {
 
 .subtitle {
   font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  font-size: 0.82rem; /* 13px */
   color: var(--subtitle-color);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -120,15 +117,15 @@ h3, .h3-heading {
 p, .body-text {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 0.85rem; /* 13.6px */
-  line-height: 1.55;
+  font-size: 0.95rem; /* 15.2px */
+  line-height: 1.65;
   color: var(--neutral-gray);
 }
 
 .caption {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 0.75rem; /* 12px */
+  font-size: 0.85rem; /* 13.6px */
   color: var(--neutral-light-gray);
 }
 
@@ -144,7 +141,7 @@ p, .body-text {
     font-size: 1.15rem; /* 18.4px */
   }
   p, .body-text {
-    font-size: 0.9rem; /* 14.4px */
+    font-size: 1rem; /* 16px */
   }
 }
 
@@ -172,7 +169,7 @@ a {
 /* Layout Classes */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -184,7 +181,7 @@ a {
 }
 
 .section-alt {
-  background-color: var(--card-bg);
+  background: linear-gradient(160deg, #f8fbff 0%, #eef4ff 100%);
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }
@@ -198,6 +195,8 @@ a {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 2.25rem auto;
+  width: 100%;
+  padding: 0 0.5rem;
 }
 
 .section-header .subtitle {
@@ -229,7 +228,7 @@ a {
 
 .section-header p {
   color: var(--neutral-gray);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 /* Grid Utilities */
@@ -358,7 +357,7 @@ a {
 .card:hover {
   transform: translateY(-8px);
   background: var(--bg-white);
-  border-color: rgba(21, 101, 192, 0.35);
+  border-color: rgba(21, 101, 192, 0.4);
   box-shadow: var(--shadow-hover);
 }
 
@@ -496,18 +495,18 @@ a {
 .form-label {
   display: block;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   margin-bottom: 0.35rem;
   color: var(--neutral-dark);
 }
 
 .form-control {
   width: 100%;
-  padding: 0.6rem 0.85rem;
+  padding: 0.65rem 0.9rem;
   border-radius: 8px;
   border: 1px solid var(--card-border);
   font-family: var(--font-family);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   background-color: var(--card-bg);
   transition: all var(--transition-fast);
   color: var(--neutral-dark);
@@ -530,9 +529,9 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 0.4rem 0.85rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 0.05em;

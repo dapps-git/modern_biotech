@@ -8,6 +8,15 @@
 .detailsColumn {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .detailsColumn {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 .capsList {
@@ -25,7 +34,7 @@
 
 .checkMark {
   color: var(--primary-green);
-  background-color: rgba(15, 107, 59, 0.1);
+  background-color: rgba(21, 101, 192, 0.1);
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;

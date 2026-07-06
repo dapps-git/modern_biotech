@@ -1,38 +1,51 @@
 .licenseSection {
-  background: var(--gradient-light-blue);
+  background: linear-gradient(160deg, #EEF4FF 0%, #DCEEFF 60%, #c8deff 100%);
   position: relative;
   overflow: hidden;
 }
 
+/* Subtle radial glows */
 .waterWaveBg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(circle at 100% 100%, rgba(15, 107, 59, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 0% 0%, rgba(16, 60, 138, 0.05) 0%, transparent 40%);
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 90% 80%, rgba(21, 101, 192, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 20%, rgba(13, 59, 134, 0.06) 0%, transparent 55%);
   pointer-events: none;
 }
 
+/* Main card */
 .card {
   background: var(--bg-white);
-  border: 1px solid var(--card-border);
+  border: 1px solid rgba(21, 101, 192, 0.15);
   border-radius: var(--radius-lg);
-  padding: 3rem;
-  box-shadow: var(--shadow-lg);
+  padding: 3rem 3.5rem;
+  box-shadow: 0 12px 40px -8px rgba(13, 59, 134, 0.14), 0 4px 8px -2px rgba(13, 59, 134, 0.08);
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+
+/* Decorative corner accent */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at top right, rgba(21, 101, 192, 0.06), transparent 65%);
+  pointer-events: none;
 }
 
 .certificateGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
-/* Seal Illustration */
+/* ─── Seal ─────────────────────────────────── */
 .stampColumn {
   display: flex;
   justify-content: center;
@@ -40,66 +53,82 @@
 }
 
 .seal {
-  width: 170px;
-  height: 170px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   border: 4px double var(--primary-green);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(15, 107, 59, 0.05);
+  background: radial-gradient(circle, rgba(21, 101, 192, 0.06) 0%, rgba(21, 101, 192, 0.02) 100%);
   position: relative;
-  animation: pulse 2.5s infinite;
+  animation: sealPulse 3s ease-in-out infinite;
 }
 
 .sealInner {
-  width: 140px;
-  height: 140px;
+  width: 155px;
+  height: 155px;
   border-radius: 50%;
-  border: 2px dashed var(--primary-green);
+  border: 2px dashed rgba(21, 101, 192, 0.55);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   text-align: center;
+  gap: 0.4rem;
 }
 
 .sealIcon {
   color: var(--primary-green);
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 0.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
 }
 
 .sealText {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 800;
   color: var(--primary-green);
-  letter-spacing: 0.1em;
-  line-height: 1.2;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
-/* Info Column */
+/* ─── Info Column ───────────────────────────── */
 .infoColumn {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
 }
 
 .badge {
   align-self: flex-start;
-  margin-bottom: 0.75rem;
 }
 
+.description {
+  font-size: 0.95rem;
+  color: var(--neutral-gray);
+  line-height: 1.7;
+}
+
+/* ─── Details Grid ──────────────────────────── */
 .detailsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 0;
+  background: linear-gradient(135deg, #F0F6FF, #E8F1FF);
+  border: 1px solid rgba(21, 101, 192, 0.18);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
 .detailItem {
-  border-bottom: 1px solid var(--card-border);
-  padding-bottom: 0.75rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(21, 101, 192, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .detailItem:last-child {
@@ -108,30 +137,28 @@
 
 .label {
   display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--neutral-light-gray);
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .value {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--primary-blue);
+  line-height: 1.35;
 }
 
+/* ─── Responsive ──────────────────────────── */
 @media (min-width: 768px) {
   .detailsGrid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
   }
   .detailItem {
     border-bottom: none;
-    border-right: 1px solid var(--card-border);
-    padding-bottom: 0;
-    padding-right: 1.5rem;
+    border-right: 1px solid rgba(21, 101, 192, 0.12);
   }
   .detailItem:last-child {
     border-right: none;
@@ -140,7 +167,32 @@
 
 @media (min-width: 1024px) {
   .certificateGrid {
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 0.65fr 1.35fr;
     gap: 4rem;
   }
+
+  .card {
+    padding: 3.5rem 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+  .seal {
+    width: 155px;
+    height: 155px;
+  }
+  .sealInner {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+/* Seal animation */
+@keyframes sealPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0.25); }
+  50%  { box-shadow: 0 0 0 14px rgba(21, 101, 192, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
 }

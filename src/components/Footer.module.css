@@ -1,21 +1,21 @@
 .footer {
-  background-color: #0D2B4F;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 5rem 0 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.85rem;
+  background-color: #0B192C;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4rem 0 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.88rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 /* Brand Column */
@@ -33,58 +33,36 @@
 
 .logoIcon {
   color: var(--primary-green);
-  width: 2rem;
-  height: 2rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  flex-shrink: 0;
 }
 
 .brandName {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--bg-white);
   display: block;
   line-height: 1.1;
+  letter-spacing: 0.02em;
 }
 
 .tagline {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .accTxt {
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
   max-width: 320px;
 }
 
-.socials {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.socialLink {
-  width: 2.25rem;
-  height: 2.25rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-fast);
-}
-
-.socialLink:hover {
-  background-color: var(--primary-green);
-  color: var(--bg-white);
-  transform: translateY(-2px);
-  border-color: var(--primary-green);
-}
-
-/* Links Column */
+/* Links Columns */
 .linksCol {
   display: flex;
   flex-direction: column;
@@ -92,29 +70,31 @@
 }
 
 .colTitle {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: var(--bg-white);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
 }
 
 .linksList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .link {
-  color: rgba(255, 255, 255, 0.65);
-  transition: all var(--transition-fast);
+  color: rgba(255, 255, 255, 0.55);
+  transition: color var(--transition-fast);
   display: inline-block;
+  font-weight: 400;
+  font-size: 0.88rem;
 }
 
 .link:hover {
   color: var(--primary-green);
-  transform: translateX(3px);
 }
 
 /* Contact Column */
@@ -133,23 +113,24 @@
 .contactDetailItem {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .contactLabel {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.05em;
+  color: var(--bg-white);
 }
 
 .contactVal {
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 0.88rem;
 }
 
 .contactVal a {
+  color: rgba(255, 255, 255, 0.55);
   transition: color var(--transition-fast);
 }
 
@@ -157,24 +138,60 @@
   color: var(--primary-green);
 }
 
-/* Bottom Bar */
+/* Highlighted phone numbers matching mockup */
+.phoneHighlight a {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.phoneHighlight a:hover {
+  color: var(--primary-green-hover);
+}
+
+/* Centered divider line */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+/* Centered bottom bar */
 .bottomBar {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: center;
   text-align: center;
-  color: rgba(255, 255, 255, 0.45);
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.credit {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+.copyrightText {
+  font-size: 0.82rem;
+  font-weight: 400;
 }
 
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+}
+
+.legalLink {
+  color: rgba(255, 255, 255, 0.4);
+  transition: color var(--transition-fast);
+}
+
+.legalLink:hover {
+  color: var(--primary-green);
+}
+
+.legalSeparator {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive grid layout */
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -183,12 +200,7 @@
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: 1.2fr 0.8fr 1fr;
-    gap: 4rem;
-  }
-  .bottomBar {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+    gap: 3rem;
   }
 }

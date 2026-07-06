@@ -9,11 +9,8 @@ export default function AboutUs() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.content}>
-            <span className="subtitle">About Us</span>
-            <h2 className="h2-heading" style={{ marginBottom: "1.5rem" }}>
-              About MODERN BIOTECH LAB
-            </h2>
-            
+
+
             <p className="body-text" style={{ marginBottom: "1.25rem", fontSize: "1rem" }}>
               <strong>MODERN BIOTECH LAB</strong> is a Kerala State Pollution Control Board (KSPCB) Approved B Grade Laboratory (License No. <strong>PCB/LAB/C11/2018-B</strong>).
             </p>
@@ -70,7 +67,7 @@ export default function AboutUs() {
               <h3 className="h3-heading" style={{ color: "var(--primary-blue)", marginBottom: "0.5rem" }}>
                 KSPCB Approved
               </h3>
-              <p className="caption" style={{ textTransform: "uppercase", fontWeight: "700", color: "var(--primary-green)" }}>
+              <p className="caption" style={{ textTransform: "uppercase", fontWeight: "600", color: "var(--primary-green)", letterSpacing: "0.05em" }}>
                 Government Approved Testing
               </p>
               <div className={styles.divider} />

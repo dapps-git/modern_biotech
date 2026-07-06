@@ -26,12 +26,12 @@ export default function Training() {
       themeColor: "green",
       icon: (
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -55,12 +55,12 @@ export default function Training() {
       themeColor: "blue",
       icon: (
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -83,12 +83,12 @@ export default function Training() {
       themeColor: "green",
       icon: (
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2.5"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
@@ -130,78 +130,78 @@ export default function Training() {
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {/* Left Column: List of Training Cards */}
-          <div className={styles.programsList}>
-            {programs.map((prog) => (
-              <div key={prog.id} className={`card ${styles.programCard}`}>
-                <div className={styles.programHeader}>
-                  <div
-                    className={`${styles.programIcon} ${
-                      prog.themeColor === "green" ? styles.bgGreen : styles.bgBlue
-                    }`}
-                  >
-                    {prog.icon}
-                  </div>
-                  <div>
-                    <h3 className="h3-heading">{prog.title}</h3>
-                    <span className={styles.programSub}>{prog.subTitle}</span>
-                  </div>
-                </div>
-                <p className="body-text" style={{ margin: "1rem 0 1.5rem 0" }}>
-                  {prog.description}
-                </p>
-                <button
-                  onClick={() => openModal(prog.id)}
-                  className={`btn btn-outline ${styles.viewBtn}`}
+        {/* 3 boxes in one row on desktop */}
+        <div className={styles.programsGrid}>
+          {programs.map((prog) => (
+            <div key={prog.id} className={`card ${styles.programCard}`}>
+              <div className={styles.programHeader}>
+                <div
+                  className={`${styles.programIcon} ${
+                    prog.themeColor === "green" ? styles.bgGreen : styles.bgBlue
+                  }`}
                 >
-                  View Details & Syllabus
-                </button>
+                  {prog.icon}
+                </div>
+                <div>
+                  <h3 className="h3-heading" style={{ fontSize: "0.95rem", fontWeight: 600 }}>{prog.title}</h3>
+                  <span className={styles.programSub}>{prog.subTitle}</span>
+                </div>
               </div>
-            ))}
-          </div>
+              <p className="body-text" style={{ margin: "1rem 0 1.25rem 0", fontSize: "0.82rem", flexGrow: 1 }}>
+                {prog.description}
+              </p>
+              <button
+                onClick={() => openModal(prog.id)}
+                className={`btn btn-outline ${styles.viewBtn}`}
+              >
+                View Syllabus
+              </button>
+            </div>
+          ))}
+        </div>
 
-          {/* Right Column: Internship and Intern Showcase */}
-          <div className={styles.internShowcase}>
-            <div className={styles.internCard}>
-              <div className={styles.imageOverlay} />
-              <div className={styles.internImageWrapper}>
-                <Image
-                  src="/images/intern.png"
-                  alt="Our Interns working in Modern Biotech Laboratory"
-                  width={600}
-                  height={450}
-                  className={styles.internImage}
-                />
+        {/* Internship Showcase Card underneath */}
+        <div className={styles.internShowcaseRow}>
+          <div className={styles.internCard}>
+            <div className={styles.internImageWrapper}>
+              <Image
+                src="/images/intern.png"
+                alt="Our Interns working in Modern Biotech Laboratory"
+                fill
+                sizes="(max-width: 1024px) 100vw, 450px"
+                priority
+                className={styles.internImage}
+              />
+            </div>
+            <div className={styles.internContent}>
+              <div className="badge badge-gold" style={{ marginBottom: "0.75rem", alignSelf: "flex-start", fontSize: "0.7rem", fontWeight: 600 }}>
+                ★ Hands-on Internships
               </div>
-              <div className={styles.internContent}>
-                <div className="badge badge-gold" style={{ marginBottom: "0.75rem", alignSelf: "flex-start" }}>
-                  ★ Hands-on Internships
+              <h3 className="h3-heading" style={{ color: "var(--primary-blue)", marginBottom: "0.55rem", fontSize: "1.15rem", fontWeight: 600 }}>
+                Student Projects & Laboratory Internships
+              </h3>
+              <p className="body-text" style={{ marginBottom: "1.25rem", fontSize: "0.85rem" }}>
+                We offer industry-recognized internship programs for biochemistry, biotechnology, microbiology, and environmental science students. Undergo practical exposure, handle real analysis projects, and secure standard certification.
+              </p>
+              
+              <div className={styles.internBullets}>
+                <div className={styles.bullet}>
+                  <span className={styles.bulletDot} />
+                  <span>Individual project guidance</span>
                 </div>
-                <h3 className="h3-heading" style={{ color: "var(--primary-blue)", marginBottom: "0.55rem" }}>
-                  Student Projects & Laboratory Internships
-                </h3>
-                <p className="body-text" style={{ marginBottom: "1rem" }}>
-                  We offer industry-recognized internship programs for biochemistry, biotechnology, microbiology, and environmental science students. Undergo practical exposure, handle real analysis projects, and secure standard certification.
-                </p>
-                <div className={styles.internBullets}>
-                  <div className={styles.bullet}>
-                    <span className={styles.bulletDot} />
-                    <span>Individual project guidance</span>
-                  </div>
-                  <div className={styles.bullet}>
-                    <span className={styles.bulletDot} />
-                    <span>Real-world client sample analysis</span>
-                  </div>
-                  <div className={styles.bullet}>
-                    <span className={styles.bulletDot} />
-                    <span>Professional internship certificate</span>
-                  </div>
+                <div className={styles.bullet}>
+                  <span className={styles.bulletDot} />
+                  <span>Real-world client sample analysis</span>
                 </div>
-                <a href="#contact" className="btn btn-primary" style={{ marginTop: "1rem" }}>
-                  Apply for Internship
-                </a>
+                <div className={styles.bullet}>
+                  <span className={styles.bulletDot} />
+                  <span>Professional internship certificate</span>
+                </div>
               </div>
+
+              <a href="#contact" className={`btn btn-primary ${styles.applyBtn}`}>
+                Apply for Internship
+              </a>
             </div>
           </div>
         </div>
@@ -220,21 +220,21 @@ export default function Training() {
               </button>
             </div>
             <div className="modal-body">
-              <p className="body-text" style={{ marginBottom: "1.25rem" }}>
+              <p className="body-text" style={{ marginBottom: "1rem", fontSize: "0.85rem" }}>
                 Curriculum syllabus breakdown for <strong>{activeProgram.title}</strong>:
               </p>
               <div className={styles.syllabusList}>
                 {activeProgram.syllabus.map((item, index) => (
                   <div key={index} className={styles.syllabusItem}>
                     <div className={styles.syllabusNumber}>0{index + 1}</div>
-                    <p className="body-text" style={{ fontWeight: 600, color: "var(--neutral-dark)" }}>
+                    <p className="body-text" style={{ fontWeight: 500, color: "var(--neutral-dark)", fontSize: "0.82rem" }}>
                       {item}
                     </p>
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: "2rem", display: "flex", justifyContent: "flex-end" }}>
-                <button onClick={closeModal} className="btn btn-outline">
+              <div style={{ marginTop: "1.5rem", display: "flex", justifyContent: "flex-end" }}>
+                <button onClick={closeModal} className="btn btn-outline" style={{ padding: "0.5rem 1rem", fontSize: "0.8rem" }}>
                   Close Syllabus
                 </button>
               </div>

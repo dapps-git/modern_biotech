@@ -33,10 +33,10 @@ export default function License() {
             {/* License details */}
             <div className={styles.infoColumn}>
               <span className={`badge badge-gold ${styles.badge}`}>Official Certification</span>
-              <h2 className="h2-heading" style={{ color: "var(--h1-color)", marginBottom: "1rem" }}>
+              <h2 className="h2-heading" style={{ color: "var(--h1-color)", marginBottom: "0" }}>
                 Kerala State Pollution Control Board Approved Laboratory
               </h2>
-              <p className="body-text" style={{ marginBottom: "1.5rem", fontSize: "1rem" }}>
+              <p className={styles.description}>
                 Modern Biotech Lab is officially accredited as a <strong>B Grade Laboratory</strong> by the <strong>Kerala State Pollution Control Board</strong>.
               </p>
               
