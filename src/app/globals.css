@@ -1,37 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
-
 :root {
   /* Fonts */
-  --font-family: 'Cormorant Garamond', serif;
+  --font-family: var(--font-neuton), 'Neuton', serif;
+  --font-secondary: var(--font-montserrat), 'Montserrat', sans-serif;
 
-  /* Primary Palette — Full Blue Theme */
-  --primary-green: #1565C0;
-  --primary-green-hover: #0D47A1;
-  --accent-green-success: #2196F3;
-  --primary-blue: #0D3B86;
-  --primary-blue-hover: #09296B;
-  --accent-blue: #1976D2;
-  --water-blue-bg: #DCEEFF;
+  /* Primary Palette — Deep Dark Blue Theme */
+  --primary-green: #0D47A1;          /* Darker corporate navy-blue */
+  --primary-green-hover: #093383;
+  --accent-green-success: #1976D2;
+  --primary-blue: #071A4F;           /* Deep dark navy */
+  --primary-blue-hover: #040F30;
+  --accent-blue: #1254A4;
+  --water-blue-bg: #C8DFF8;
 
   /* Neutral Colors */
-  --neutral-dark: #1F2937;
-  --neutral-gray: #4B5563;
-  --neutral-light-gray: #6B7280;
-  --card-border: #C8DCEF;
-  --card-bg: #F5F9FF;
+  --neutral-dark: #0F1C2E;           /* Very dark navy text */
+  --neutral-gray: #374357;
+  --neutral-light-gray: #5A6A82;
+  --card-border: #A8C4E8;            /* Slightly deeper card border */
+  --card-bg: #EEF5FF;                /* Deeper blue-tinted card bg */
   --bg-white: #FFFFFF;
 
   /* Heading Specific */
-  --h1-color: #0D2B4F;
-  --h2-color: #1565C0;
-  --h3-color: #0D3B86;
-  --subtitle-color: #1976D2;
+  --h1-color: #060E2A;               /* Very deep navy */
+  --h2-color: #0D47A1;               /* Deep blue */
+  --h3-color: #071A4F;               /* Darkest navy */
+  --subtitle-color: #1254A4;
 
-  /* Gradients */
-  --gradient-green: linear-gradient(135deg, #1565C0 0%, #2196F3 100%);
-  --gradient-blue: linear-gradient(135deg, #0D3B86 0%, #1976D2 100%);
-  --gradient-light-blue: linear-gradient(180deg, #EEF4FF 0%, #DCEEFF 100%);
-  --gradient-water-overlay: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(186,220,255,0.4) 100%);
+  /* Gradients — deeper blues */
+  --gradient-green: linear-gradient(135deg, #0D47A1 0%, #1976D2 100%);
+  --gradient-blue: linear-gradient(135deg, #071A4F 0%, #1254A4 100%);
+  --gradient-light-blue: linear-gradient(160deg, #EEF5FF 0%, #D6E9FF 100%);
+  --gradient-water-overlay: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(160,205,255,0.4) 100%);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -44,11 +43,11 @@
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 10px 20px -4px rgba(13, 59, 134, 0.1), 0 4px 6px -2px rgba(13, 59, 134, 0.06);
-  --shadow-hover: 0 20px 30px -6px rgba(21, 101, 192, 0.18), 0 8px 12px -4px rgba(21, 101, 192, 0.1);
+  /* Shadows — navy-tinted */
+  --shadow-sm: 0 1px 4px rgba(7, 26, 79, 0.07);
+  --shadow-md: 0 4px 8px -1px rgba(7, 26, 79, 0.08), 0 2px 4px -1px rgba(7, 26, 79, 0.04);
+  --shadow-lg: 0 10px 24px -4px rgba(7, 26, 79, 0.13), 0 4px 8px -2px rgba(7, 26, 79, 0.08);
+  --shadow-hover: 0 22px 32px -6px rgba(13, 71, 161, 0.22), 0 8px 14px -4px rgba(13, 71, 161, 0.13);
 
   /* Layout Spacing */
   --header-height: 80px;
@@ -60,6 +59,11 @@
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 html {
@@ -76,7 +80,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 /* Typography matching image.png scale */
@@ -181,7 +184,7 @@ a {
 }
 
 .section-alt {
-  background: linear-gradient(160deg, #f8fbff 0%, #eef4ff 100%);
+  background: linear-gradient(160deg, #EEF5FF 0%, #D6E9FF 100%);
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }

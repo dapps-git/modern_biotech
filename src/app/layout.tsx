@@ -1,6 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Neuton, Montserrat } from "next/font/google";
 import "./globals.css";
+
+const neuton = Neuton({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "700", "800"],
+  variable: "--font-neuton",
+  display: "swap",
+});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -42,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
-      <body style={{ fontFamily: "var(--font-montserrat), 'Montserrat', sans-serif" }}>
+    <html lang="en" className={`${neuton.variable} ${montserrat.variable}`}>
+      <body>
         {children}
       </body>
     </html>

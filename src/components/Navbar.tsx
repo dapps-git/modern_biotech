@@ -68,7 +68,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${isOpen ? styles.menuOpen : ""}`}>
       <div className={`container ${styles.container}`}>
         <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, "#home")}>
           <svg

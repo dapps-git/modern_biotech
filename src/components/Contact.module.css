@@ -135,8 +135,14 @@
 
 .formRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .field {

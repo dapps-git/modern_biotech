@@ -7,6 +7,7 @@ interface ServiceItem {
   id: string;
   title: string;
   description: string;
+  image: string;
   icon: React.ReactNode;
   themeColor: "green" | "blue";
   highlights: string[];
@@ -23,6 +24,7 @@ export default function Services() {
     {
       id: "drinking",
       title: "Drinking Water Analysis",
+      image: "/images/drink.webp",
       description: "Comprehensive testing of drinking water sources (well water, tap water, packaged water) using standard analytical methods to ensure safety and compliance with drinking water standards.",
       themeColor: "green",
       icon: (
@@ -62,6 +64,7 @@ export default function Services() {
     {
       id: "wastewater",
       title: "Waste Water Analysis",
+      image: "/images/waste.webp",
       description: "Professional wastewater testing for industries, commercial complexes, housing societies, and institutions to verify compliance with pollution control standards.",
       themeColor: "blue",
       icon: (
@@ -132,6 +135,18 @@ export default function Services() {
         <div className={styles.servicesGrid}>
           {services.map((service) => (
             <div key={service.id} className={`card ${styles.serviceCard}`}>
+              {/* Service image banner */}
+              <div className={styles.cardImageWrap}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardImageOverlay} />
+              </div>
+
+              <div className={styles.cardBody}>
               <div
                 className={`icon-box ${
                   service.themeColor === "green" ? "icon-box-green" : "icon-box-blue"
@@ -176,6 +191,7 @@ export default function Services() {
                 View Testing Parameters
                 <span className="btn-icon">→</span>
               </button>
+              </div> {/* end cardBody */}
             </div>
           ))}
         </div>

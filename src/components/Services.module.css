@@ -17,36 +17,104 @@
   margin: 0 auto;
 }
 
+/* Updated service card with no padding, overflow hidden for images */
 .serviceCard {
   background: var(--bg-white);
   border-radius: var(--radius-lg);
-  padding: 2rem 1.5rem;
+  padding: 0 !important; /* Zero out padding for edge-to-edge top image */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-normal);
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-green) !important;
+  box-shadow: var(--shadow-hover);
+}
+
+/* ─── Card Image Banner ───────────────────────── */
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 180px; /* mobile height */
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .serviceCard {
-    padding: 3rem 2.5rem;
+  .cardImageWrap {
+    height: 230px; /* desktop height */
   }
 }
 
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+/* Subtle zoom effect on hover */
+.serviceCard:hover .cardImage {
+  transform: scale(1.07);
+}
+
+/* Soft gradient overlay on image for rich styling */
+.cardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.15) 0%, rgba(7, 26, 79, 0.45) 100%);
+}
+
+/* ─── Card Content Body ────────────────────────── */
+.cardBody {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .cardBody {
+    padding: 2.25rem 2rem;
+  }
+}
+
+/* Shift icon box slightly over the image boundary */
 .serviceIconBox {
-  margin-top: -1rem;
+  position: absolute;
+  top: -24px;
+  right: 1.5rem;
+  margin-top: 0 !important;
+  box-shadow: 0 4px 10px rgba(7, 26, 79, 0.15);
+  border: 2px solid var(--bg-white);
+}
+
+@media (min-width: 768px) {
+  .serviceIconBox {
+    right: 2rem;
+    top: -28px;
+  }
 }
 
 .highlightsList {
   list-style: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.8rem;
 }
 
 .highlightItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.9rem;
+  gap: 0.65rem;
+  font-size: 0.88rem;
   font-weight: 500;
+  color: var(--neutral-gray);
 }
 
 .checkGreen {
@@ -62,6 +130,13 @@
 .actionBtn {
   margin-top: auto;
   align-self: flex-start;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .actionBtn {
+    width: auto;
+  }
 }
 
 /* Modals Parameter styling */
