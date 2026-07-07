@@ -14,12 +14,11 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center 30%;
+  background-position: center center; /* Centered on mobile to align image content properly */
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.9s ease-in-out;
   z-index: 0;
-  /* Slight zoom effect on active slide */
   transform: scale(1.04);
 }
 
@@ -48,33 +47,7 @@
   z-index: 1;
 }
 
-/* ─── Slide Indicators ───────────────────────── */
-.slideIndicators {
-  position: absolute;
-  bottom: 1.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-  z-index: 5;
-}
 
-.indicatorDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.indicatorActive {
-  background: var(--bg-white);
-  width: 22px;
-  border-radius: 4px;
-}
 
 /* ─── Content ────────────────────────────────── */
 .container {
@@ -98,7 +71,7 @@
 .overline {
   color: var(--water-blue-bg);
   font-weight: 600;
-  font-size: 0.68rem;
+  font-size: 0.62rem; /* Sized down slightly for mobile wrapping */
   line-height: 1.4;
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
@@ -108,7 +81,7 @@
 }
 
 .title {
-  font-size: 1.95rem;
+  font-size: 1.75rem; /* Reduced for better mobile alignment */
   margin-bottom: 1rem;
   color: var(--bg-white);
   font-weight: 700;
@@ -117,7 +90,7 @@
 }
 
 .tagline {
-  font-size: 0.95rem;
+  font-size: 0.85rem; /* Reduced for better mobile alignment */
   font-weight: 500;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.95);
@@ -135,9 +108,10 @@
 }
 
 .btnHeroOutline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.15);
   color: var(--bg-white);
-  border: 2px solid var(--bg-white);
+  border: none !important; /* Removed border */
+  border-radius: 0px !important; /* Square corners */
   box-shadow: none;
 }
 
@@ -151,19 +125,22 @@
 /* ─── Responsive ─────────────────────────────── */
 @media (min-width: 480px) {
   .title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
   .tagline {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
   .overline {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 }
 
 @media (min-width: 768px) {
   .hero {
     padding: var(--header-height) 0 2rem 0;
+  }
+  .bgSlide {
+    background-position: center 30%; /* Shifted up slightly for optimal focus on desktop */
   }
   .title {
     font-size: 2.8rem;

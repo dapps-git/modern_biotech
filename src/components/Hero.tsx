@@ -57,30 +57,10 @@ export default function Hero() {
       {/* Dark overlay */}
       <div className={styles.bgOverlay} />
 
-      {/* Slide indicators */}
-      <div className={styles.slideIndicators} aria-hidden="true">
-        {heroSlides.map((_, i) => (
-          <button
-            key={i}
-            className={`${styles.indicatorDot} ${i === currentSlide ? styles.indicatorActive : ""}`}
-            onClick={() => {
-              setTransitioning(true);
-              setPrevSlide(currentSlide);
-              setTimeout(() => {
-                setCurrentSlide(i);
-                setTransitioning(false);
-                setPrevSlide(null);
-              }, 900);
-            }}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-
       <div className={`container ${styles.container}`}>
         <div className={styles.content}>
           <span className={`subtitle ${styles.overline}`}>
-            KSPCB Approved B Grade Laboratory • License No: PCB/LAB/C11/2018-B
+            KSPCB Approved B Grade Laboratory • License No: <span style={{ whiteSpace: "nowrap" }}>PCB/LAB/C11/2018-B</span>
           </span>
 
           <h1 className={styles.title}>MODERN BIOTECH LAB</h1>
