@@ -52,12 +52,12 @@ export default function Services() {
           items: ["Color", "Odour", "Taste", "pH Value", "Turbidity (NTU)", "Electrical Conductivity (EC)", "Total Dissolved Solids (TDS)"]
         },
         {
-          category: "Chemical Parameters",
-          items: ["Total Hardness", "Calcium", "Magnesium", "Chloride", "Fluoride", "Iron", "Nitrate", "Sulphate", "Alkalinity", "Acidity", "Residual Chlorine"]
+          category: "Water Parameters",
+          items: ["pH", "Conductivity", "Turbidity", "Total Dissolved Solids (TDS)", "Total Suspended Solids (TSS)", "Total Alkalinity", "Chloride", "Total Hardness", "Calcium Hardness", "Magnesium Hardness", "Magnesium", "Calcium", "Sulphate", "Iron", "Total Coliform", "Fecal Coliform", "E. coli", "Acidity", "Ammonia", "Fluoride", "Nitrite", "Nitrate"]
         },
         {
           category: "Bacteriological Parameters",
-          items: ["Total Coliform Count", "Escherichia coli (E. coli) Detection", "Fecal Streptococci Detection"]
+          items: ["Total Coliform", "Fecal Coliform", "MPN Method"]
         }
       ]
     },
