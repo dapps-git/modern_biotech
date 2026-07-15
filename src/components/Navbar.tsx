@@ -8,6 +8,7 @@ const navLinks = [
   { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Training", href: "#training" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "Contact", href: "#contact" },
 ];

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Training from "@/components/Training";
+import Certifications from "@/components/Certifications";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Laboratory from "@/components/Laboratory";
 import License from "@/components/License";
@@ -20,6 +21,7 @@ export default function Home() {
         <AboutUs />
         <Services />
         <Training />
+        <Certifications />
         <WhyChooseUs />
         <Laboratory />
         <License />

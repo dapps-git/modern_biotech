@@ -69,8 +69,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#training" onClick={(e) => handleScrollTo(e, "#training")} className={styles.link}>
-                  Student Internships
+                <a href="#certifications" onClick={(e) => handleScrollTo(e, "#certifications")} className={styles.link}>
+                  HACCP &amp; Food Safety
                 </a>
               </li>
             </ul>
@@ -91,8 +91,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#training" onClick={(e) => handleScrollTo(e, "#training")} className={styles.link}>
-                  Training Programs
+                <a href="#certifications" onClick={(e) => handleScrollTo(e, "#certifications")} className={styles.link}>
+                  Certifications
                 </a>
               </li>
               <li>
