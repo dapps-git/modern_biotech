@@ -196,3 +196,140 @@
   50%  { box-shadow: 0 0 0 14px rgba(21, 101, 192, 0); }
   100% { box-shadow: 0 0 0 0 rgba(21, 101, 192, 0); }
 }
+
+/* ─── Brochure Box below KSPCB Card ──────────────── */
+.brochureBox {
+  margin-top: 1.75rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F4F8FF 100%);
+  border: 1px solid rgba(21, 101, 192, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px -4px rgba(13, 59, 134, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  transition: all var(--transition-normal);
+}
+
+.brochureBox:hover {
+  border-color: var(--primary-green);
+  box-shadow: 0 12px 30px -4px rgba(13, 59, 134, 0.12);
+  transform: translateY(-2px);
+}
+
+.brochureInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.pdfIconWrapper {
+  position: relative;
+  width: 50px;
+  height: 56px;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.pdfFileIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.pdfBadge {
+  position: absolute;
+  bottom: 4px;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.brochureText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brochureTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.brochureDescription {
+  font-size: 0.88rem;
+  color: var(--neutral-gray);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.brochureAction {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--gradient-green);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.25);
+  transition: all var(--transition-normal);
+  width: 100%;
+}
+
+.downloadBtn:hover {
+  background: var(--primary-green-dark, #0d47a1);
+  box-shadow: 0 6px 20px rgba(21, 101, 192, 0.4);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.downloadIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.downloadBtn:hover .downloadIcon {
+  transform: translateY(2px);
+}
+
+@media (min-width: 768px) {
+  .brochureBox {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .brochureAction {
+    width: auto;
+  }
+
+  .downloadBtn {
+    width: auto;
+  }
+}
+

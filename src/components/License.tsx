@@ -5,7 +5,7 @@ import styles from "./License.module.css";
 
 export default function License() {
   return (
-    <section className={`section ${styles.licenseSection}`}>
+    <section className={`section ${styles.licenseSection}`} id="license">
       <div className={styles.waterWaveBg} />
       <div className="container">
         <div className={styles.card}>
@@ -55,6 +55,60 @@ export default function License() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* PDF Brochure Download Card below KSPCB Box */}
+        <div className={styles.brochureBox}>
+          <div className={styles.brochureInfo}>
+            <div className={styles.pdfIconWrapper}>
+              <svg
+                className={styles.pdfFileIcon}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <path d="M9 15h6" />
+                <path d="M9 11h6" />
+              </svg>
+              <span className={styles.pdfBadge}>PDF</span>
+            </div>
+            <div className={styles.brochureText}>
+              <h3 className={styles.brochureTitle}>Modern Biotech Lab Official Brochure</h3>
+              <p className={styles.brochureDescription}>
+                Download our official brochure for complete details on water testing parameters, KSPCB certification, and laboratory services.
+              </p>
+            </div>
+          </div>
+          
+          <div className={styles.brochureAction}>
+            <a
+              href="/images/MODERN%20BIOTECH%20BROSHURE%20-%201.pdf"
+              download="MODERN_BIOTECH_BROCHURE.pdf"
+              className={styles.downloadBtn}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                className={styles.downloadIcon}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download Brochure</span>
+            </a>
           </div>
         </div>
       </div>
