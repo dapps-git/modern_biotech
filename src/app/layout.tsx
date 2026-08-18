@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${neuton.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${neuton.variable} ${montserrat.variable}`} suppressHydrationWarning>
       <body>
         {children}
       </body>
