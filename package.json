@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "compress-pdf": "node scripts/compress_pdf.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
@@ -19,6 +20,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.35.4",
     "typescript": "^5"
   }
 }
